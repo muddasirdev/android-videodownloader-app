@@ -1,0 +1,551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout >
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        android:background="@color/form_background">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/rel"
+                    android:layout_height="250dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorPrimary">
+
+                    <ImageView
+                        android:id="@+id/logo"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/logo"
+                        android:layout_centerInParent="true">
+
+                    </ImageView>
+
+                    <TextView
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="@string/app_name"
+                        android:layout_below="@id/logo"
+                        android:layout_centerHorizontal="true"
+                        android:textSize="22sp"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:layout_marginTop="10dp">
+                    </TextView>
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/rel"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <RelativeLayout
+                        android:id="@+id/sharechat_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rectangle"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:elevation="3dp"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/sharechat_logo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/sharechat"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp">
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/sharechat_logo"
+                            android:layout_toLeftOf="@id/sharechat_arrow">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="ShareChat"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="22sp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Download ShareChat Videos"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorPrimaryDark">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:id="@+id/sharechat_arrow">
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:visibility="gone"
+                        android:id="@+id/whatsapp_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rectangle"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/whatsapp_logo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/whatsapp_logo"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp">
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/whatsapp_logo"
+                            android:layout_toLeftOf="@id/whatsapp_arrow">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Whatsapp"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="22sp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Save whatsapp status images and videos"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorPrimaryDark">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:id="@+id/whatsapp_arrow">
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/youtube_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rectangle"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/youtube_logo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/youtube"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp">
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/youtube_logo"
+                            android:layout_toLeftOf="@id/youtube_arrow">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Youtube"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="22sp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Download Youtube Videos"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorPrimaryDark">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:id="@+id/youtube_arrow">
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/facebook_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rectangle"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/fb_logo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/fb"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp">
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/fb_logo"
+                            android:layout_toLeftOf="@id/fb_arrow">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Facebook"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="22sp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Download Facebook Videos"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorPrimaryDark">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:id="@+id/fb_arrow">
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/about_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rectangle"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/about_logo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/ic_about"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp">
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/about_logo"
+                            android:layout_toLeftOf="@id/about_arrow">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="About Us"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="22sp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Know more about app"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorPrimaryDark">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:id="@+id/about_arrow">
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/share_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rectangle"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/share_logo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/ic_share"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp">
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/share_logo"
+                            android:layout_toLeftOf="@id/share_arrow">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Share App"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="22sp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Share app with your friends"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorPrimaryDark">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:id="@+id/share_arrow">
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/rate_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rectangle"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/rate_logo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/ic_rate"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp">
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/rate_logo"
+                            android:layout_toLeftOf="@id/rate_arrow">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rate app"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="22sp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Show some love"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorPrimaryDark">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:id="@+id/rate_arrow">
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/more_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="100dp"
+                        android:background="@drawable/rectangle"
+                        android:layout_marginHorizontal="5dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginBottom="5dp"
+                        android:elevation="3dp">
+
+                        <ImageView
+                            android:id="@+id/more_logo"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/ic_more"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="12dp">
+                        </ImageView>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical"
+                            android:layout_centerVertical="true"
+                            android:layout_margin="10dp"
+                            android:layout_toRightOf="@id/more_logo"
+                            android:layout_toLeftOf="@id/more_arrow">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="More Apps"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="22sp"
+                                android:textColor="@color/colorPrimaryDark"
+                                android:textStyle="bold">
+                            </TextView>
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="View our other creation"
+                                android:layout_marginLeft="12dp"
+                                android:textSize="16sp"
+                                android:textColor="@color/colorPrimaryDark">
+                            </TextView>
+
+                        </LinearLayout>
+
+                        <ImageView
+                            android:layout_width="30dp"
+                            android:layout_height="30dp"
+                            android:src="@drawable/ic_arrow"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:id="@+id/more_arrow">
+                        </ImageView>
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </ScrollView>
+
+    </RelativeLayout>
+</layout>

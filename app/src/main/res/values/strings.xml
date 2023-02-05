@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Video Downloader</string>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="ads_app_id">ca-app-pub-8834909156497028~4913434222</string>
+    <string name="facebook_screen_ads">ca-app-pub-8834909156497028/6934491701</string>
+</resources>
