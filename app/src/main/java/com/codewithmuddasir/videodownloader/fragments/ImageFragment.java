@@ -1,5 +1,7 @@
 package com.codewithmuddasir.videodownloader.fragments;
 
+import android.content.Context;
+import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -52,10 +55,7 @@ public class ImageFragment extends Fragment {
     private void getData() {
         WhatsappStatusModel model;
 
-        String path=  Build.VERSION.SDK_INT < 30  ? "WhatsApp/Media/.Statuses":"Android/media/com.whatsapp/WhatsApp/Media/.Statuses";
-
-
-        String targetDirWhatsApp = Environment.getExternalStorageDirectory() + File.separator + path;
+        String targetDirWhatsApp = getDirPath("WhatsApp") + "/Media/.Statuses";
 
         Log.i("ImageFragment", targetDirWhatsApp);
 
@@ -63,10 +63,10 @@ public class ImageFragment extends Fragment {
 
         File[] allFiles = targetFiles.listFiles();
 
-//        String targetDirBusiness = Environment.getExternalStorageDirectory() + (Build.VERSION.SDK_INT <= 30 ? "/WhatsApp/Media/.statuses" : "Android/media/com.whatsapp.w4b/WhatsApp/Media/.statuses");
-//
+//        String targetDirBusiness = getDirPath("WhatsApp Business") + "/Media/.Statuses";
+
 //        File targetFilesBusiness = new File(targetDirBusiness);
-//
+
 //        File[] allFilesBusiness = targetFilesBusiness.listFiles();
 
         Arrays.sort(allFiles, (file, t1) -> {
@@ -110,5 +110,33 @@ public class ImageFragment extends Fragment {
         whatsappAdapter = new WhatsappAdapter(list, getActivity());
 
         binding.whatsappRecycler.setAdapter(whatsappAdapter);
+    }
+
+    private String getDirPath(String dir) {
+        String whatsappPath = "";
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            Context context = this.getActivity().getApplicationContext();
+            Uri uri = MediaStore.Downloads.EXTERNAL_CONTENT_URI;
+            String[] projection = new String[] {
+                    MediaStore.Downloads.DISPLAY_NAME,
+                    MediaStore.Downloads.RELATIVE_PATH
+            };
+            String selection = MediaStore.Downloads.DISPLAY_NAME + " = ? ";
+            String[] selectionArgs = new String[] { "WhatsApp" };
+            String sortOrder = MediaStore.Downloads.DATE_MODIFIED + " DESC";
+            try (Cursor cursor = context.getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder)) {
+                if (cursor != null && cursor.moveToFirst()) {
+                    String relativePath = cursor.getString(cursor.getColumnIndexOrThrow(MediaStore.Downloads.RELATIVE_PATH));
+                    File whatsappDir = new File(Environment.getExternalStorageDirectory(), relativePath);
+                    whatsappPath = whatsappDir.getAbsolutePath();
+                    Log.d("WhatsApp Path", whatsappPath);
+                }
+            }
+        } else {
+            File whatsappDir = new File(Environment.getExternalStorageDirectory(), "WhatsApp");
+            whatsappPath = whatsappDir.getAbsolutePath();
+            Log.d("WhatsApp Path", whatsappPath);
+        }
+        return whatsappPath;
     }
 }
